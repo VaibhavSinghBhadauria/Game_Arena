@@ -1,360 +1,264 @@
-```css
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+
+const products = [
+  // FOOTBALL
+  {
+    id: 1, sport: "football", name: "Football Match Ball",
+    price: 1299, emoji: "⚽", category: "Match essentials",
+    image: "https://loremflickr.com/700/500/soccer,ball?lock=101"
+  },
+  {
+    id: 2, sport: "football", name: "Football Boots",
+    price: 3499, emoji: "👟", category: "Footwear",
+    image: "https://loremflickr.com/700/500/soccer,cleats?lock=102"
+  },
+  {
+    id: 3, sport: "football", name: "Team Jersey",
+    price: 1499, emoji: "👕", category: "Apparel",
+    image: "https://loremflickr.com/700/500/soccer,jersey?lock=103"
+  },
+  {
+    id: 4, sport: "football", name: "Shin Guards",
+    price: 799, emoji: "🦵", category: "Protection",
+    image: "https://loremflickr.com/700/500/soccer,shin,guards?lock=104"
+  },
+
+  // BASKETBALL
+  {
+    id: 5, sport: "basketball", name: "Basketball",
+    price: 999, emoji: "🏀", category: "Match essentials",
+    image: "https://loremflickr.com/700/500/basketball,ball?lock=201"
+  },
+  {
+    id: 6, sport: "basketball", name: "Court Shoes",
+    price: 3999, emoji: "👟", category: "Footwear",
+    image: "https://loremflickr.com/700/500/basketball,shoes?lock=202"
+  },
+  {
+    id: 7, sport: "basketball", name: "Basketball Jersey",
+    price: 1299, emoji: "👕", category: "Apparel",
+    image: "https://loremflickr.com/700/500/basketball,jersey?lock=203"
+  },
+  {
+    id: 8, sport: "basketball", name: "Sports Socks",
+    price: 399, emoji: "🧦", category: "Accessories",
+    image: "https://loremflickr.com/700/500/sports,socks?lock=204"
+  },
+
+  // CRICKET
+  {
+    id: 9, sport: "cricket", name: "English Willow Bat",
+    price: 2499, emoji: "🏏", category: "Batting",
+    image: "https://loremflickr.com/700/500/cricket,bat?lock=301"
+  },
+  {
+    id: 10, sport: "cricket", name: "Cricket Ball",
+    price: 399, emoji: "🔴", category: "Match essentials",
+    image: "https://loremflickr.com/700/500/cricket,ball?lock=302"
+  },
+  {
+    id: 11, sport: "cricket", name: "Batting Gloves",
+    price: 1299, emoji: "🧤", category: "Protection",
+    image: "https://loremflickr.com/700/500/cricket,batting,gloves?lock=303"
+  },
+  {
+    id: 12, sport: "cricket", name: "Cricket Helmet",
+    price: 2999, emoji: "🪖", category: "Protection",
+    image: "https://loremflickr.com/700/500/cricket,helmet?lock=304"
+  },
+
+  // BASEBALL
+  {
+    id: 13, sport: "baseball", name: "Baseball Bat",
+    price: 2199, emoji: "🏏", category: "Batting",
+    image: "https://loremflickr.com/700/500/baseball,bat?lock=401"
+  },
+  {
+    id: 14, sport: "baseball", name: "Baseball",
+    price: 499, emoji: "⚾", category: "Match essentials",
+    image: "https://loremflickr.com/700/500/baseball,ball?lock=402"
+  },
+  {
+    id: 15, sport: "baseball", name: "Fielding Glove",
+    price: 1999, emoji: "🧤", category: "Fielding",
+    image: "https://loremflickr.com/700/500/baseball,glove?lock=403"
+  },
+  {
+    id: 16, sport: "baseball", name: "Batting Helmet",
+    price: 1799, emoji: "🪖", category: "Protection",
+    image: "https://loremflickr.com/700/500/baseball,batting,helmet?lock=404"
+  }
+];
+
+let cart = [];
+
+try {
+  cart = JSON.parse(localStorage.getItem("gameArenaCart")) || [];
+} catch (error) {
+  cart = [];
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f4f6fa;
-    color: #172033;
+const currency = amount => "₹" + amount.toLocaleString("en-IN");
+
+function renderProducts() {
+  ["football", "basketball", "cricket", "baseball"].forEach(sport => {
+    const target = document.getElementById(sport + "Products");
+
+    target.innerHTML = products
+      .filter(product => product.sport === sport)
+      .map(product => `
+        <article class="product-card">
+          <div class="product-visual">
+            <img
+              src="${product.image}"
+              alt="${product.name}"
+              loading="lazy"
+              onerror="this.onerror=null;this.parentElement.innerHTML='<span style=&quot;font-size:4rem&quot;>${product.emoji}</span>'"
+            >
+          </div>
+          <div class="product-info">
+            <span class="product-category">${product.category}</span>
+            <h3>${product.name}</h3>
+            <div class="rating">★★★★★ <small>(4.5)</small></div>
+            <div class="product-bottom">
+              <span class="price">${currency(product.price)}</span>
+              <button class="add-btn" onclick="addToCart(${product.id})">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </article>
+      `).join("");
+  });
 }
 
-.header {
-    background: #07152e;
-    color: white;
-    padding: 18px 5%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    flex-wrap: wrap;
+function saveCart() {
+  try {
+    localStorage.setItem("gameArenaCart", JSON.stringify(cart));
+  } catch (error) {
+    console.warn("Cart could not be saved in this browser.");
+  }
+  renderCart();
 }
 
-.logo {
-    font-size: 25px;
-    font-weight: bold;
-    color: white;
-    text-decoration: none;
+function addToCart(id) {
+  const existing = cart.find(item => item.id === id);
+
+  if (existing) {
+    existing.quantity++;
+  } else {
+    cart.push({ id: id, quantity: 1 });
+  }
+
+  saveCart();
 }
 
-.logo span {
-    color: #ffd43b;
+function changeQuantity(id, amount) {
+  const item = cart.find(entry => entry.id === id);
+  if (!item) return;
+
+  item.quantity += amount;
+
+  if (item.quantity <= 0) {
+    cart = cart.filter(entry => entry.id !== id);
+  }
+
+  saveCart();
 }
 
-nav {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 16px;
+function removeFromCart(id) {
+  cart = cart.filter(item => item.id !== id);
+  saveCart();
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
+function renderCart() {
+  const cartItems = document.getElementById("cartItems");
+  const itemCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+  document.getElementById("cartCount").textContent = itemCount;
+
+  if (cart.length === 0) {
+    cartItems.innerHTML =
+      '<p class="empty-cart">Your cart is empty. Add something you love!</p>';
+  } else {
+    cartItems.innerHTML = cart.map(item => {
+      const product = products.find(p => p.id === item.id);
+      if (!product) return "";
+
+      return `
+        <article class="cart-row">
+          <div class="cart-emoji">
+            <img
+              src="${product.image}"
+              alt="${product.name}"
+              loading="lazy"
+              onerror="this.onerror=null;this.parentElement.textContent='${product.emoji}'"
+            >
+          </div>
+
+          <div>
+            <h3>${product.name}</h3>
+            <p>${product.sport} · ${currency(product.price)} each</p>
+            <div class="quantity-controls">
+              <button onclick="changeQuantity(${product.id}, -1)">−</button>
+              <span>${item.quantity}</span>
+              <button onclick="changeQuantity(${product.id}, 1)">+</button>
+              <button class="remove-btn" onclick="removeFromCart(${product.id})">
+                Remove
+              </button>
+            </div>
+          </div>
+
+          <div class="cart-row-total">
+            ${currency(product.price * item.quantity)}
+          </div>
+        </article>
+      `;
+    }).join("");
+  }
+
+  const subtotal = cart.reduce((sum, item) => {
+    const product = products.find(p => p.id === item.id);
+    return sum + (product ? product.price * item.quantity : 0);
+  }, 0);
+
+  const delivery = subtotal > 0 ? 99 : 0;
+
+  document.getElementById("subtotal").textContent = currency(subtotal);
+  document.getElementById("delivery").textContent = currency(delivery);
+  document.getElementById("total").textContent =
+    currency(subtotal + delivery);
 }
 
-nav a:hover {
-    color: #ffd43b;
-}
+document.getElementById("checkoutBtn").addEventListener("click", () => {
+  if (cart.length === 0) {
+    alert("Your cart is empty. Please add a product first.");
+  } else {
+    alert("Thank you for shopping at Game Arena! This is a demo checkout; payments are not enabled.");
+  }
+});
 
-.hero {
-    min-height: 440px;
-    display: flex;
-    align-items: center;
-    padding: 60px 8%;
-    color: white;
-    background:
-        linear-gradient(90deg, rgba(4, 15, 35, 0.92), rgba(4, 15, 35, 0.25)),
-        url("https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1800&q=85");
-    background-position: center;
-    background-size: cover;
-}
+document.getElementById("contactForm").addEventListener("submit", event => {
+  event.preventDefault();
 
-.hero-content {
-    max-width: 600px;
-}
+  const name = document.getElementById("contactName").value.trim();
 
-.tagline {
-    color: #ffd43b;
-    font-weight: bold;
-    letter-spacing: 3px;
-}
+  document.getElementById("contactFeedback").textContent =
+    `Thank you, ${name}! This demo form does not send emails yet.`;
 
-.hero h1 {
-    font-size: clamp(42px, 6vw, 68px);
-    margin: 18px 0;
-}
+  event.target.reset();
+});
 
-.hero h1 span {
-    color: #ffd43b;
-}
+document.getElementById("menuToggle").addEventListener("click", () => {
+  document.getElementById("mainNav").classList.toggle("open");
+});
 
-.hero p {
-    line-height: 1.7;
-    margin-bottom: 24px;
-}
+document.querySelectorAll("#mainNav a").forEach(link => {
+  link.addEventListener("click", () => {
+    document.getElementById("mainNav").classList.remove("open");
+  });
+});
 
-.btn {
-    display: inline-block;
-    background: #ffd43b;
-    color: #07152e;
-    border: none;
-    border-radius: 5px;
-    padding: 12px 20px;
-    font-weight: bold;
-    text-decoration: none;
-    cursor: pointer;
-}
+document.getElementById("year").textContent = new Date().getFullYear();
 
-.btn:hover {
-    background: #f2bd00;
-}
-
-.section {
-    padding: 55px 6%;
-}
-
-.section h2 {
-    text-align: center;
-    color: #07152e;
-    font-size: 30px;
-    margin-bottom: 30px;
-}
-
-.sports-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 20px;
-}
-
-.sport-card {
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-    text-decoration: none;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.09);
-    transition: transform 0.2s;
-}
-
-.sport-card:hover {
-    transform: translateY(-5px);
-}
-
-.sport-card img {
-    display: block;
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-}
-
-.sport-card h3 {
-    text-align: center;
-    color: #07152e;
-    padding: 16px;
-}
-
-.product-section {
-    background: white;
-}
-
-.product-section.alternate {
-    background: #eef1f7;
-}
-
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 22px;
-}
-
-.product-card {
-    background: white;
-    border: 1px solid #e0e5ed;
-    border-radius: 10px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
-    transition: transform 0.2s;
-}
-
-.product-card:hover {
-    transform: translateY(-4px);
-}
-
-.product-card img {
-    width: 100%;
-    height: 210px;
-    object-fit: cover;
-    display: block;
-    background: #e8ecf2;
-}
-
-.product-info {
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    flex: 1;
-}
-
-.product-info h3 {
-    color: #07152e;
-    font-size: 17px;
-}
-
-.product-info p {
-    color: #536078;
-    font-size: 14px;
-    line-height: 1.5;
-}
-
-.product-info .price {
-    color: #07152e;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.product-info .btn {
-    width: 100%;
-    margin-top: auto;
-}
-
-.cart-section {
-    background: #e8edf5;
-}
-
-#cart-items {
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.empty-cart {
-    text-align: center;
-    padding: 20px;
-    background: white;
-    border-radius: 8px;
-}
-
-.cart-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 15px;
-    flex-wrap: wrap;
-    background: white;
-    border-radius: 8px;
-    padding: 16px;
-    margin-bottom: 12px;
-}
-
-.cart-row h3 {
-    font-size: 16px;
-    margin-bottom: 6px;
-}
-
-.quantity-controls {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.quantity-controls button,
-.remove-btn,
-.clear-btn {
-    border: none;
-    padding: 9px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.quantity-controls button {
-    background: #07152e;
-    color: white;
-}
-
-.remove-btn,
-.clear-btn {
-    background: #dce2ec;
-    color: #07152e;
-}
-
-.cart-summary {
-    max-width: 900px;
-    margin: 25px auto 0;
-    padding: 22px;
-    background: white;
-    border-radius: 8px;
-    line-height: 2;
-}
-
-.cart-summary h3 {
-    font-size: 23px;
-    margin: 8px 0 14px;
-}
-
-.cart-summary h3 span {
-    color: #08734f;
-}
-
-.contact-section {
-    background: white;
-    text-align: center;
-}
-
-.contact-card {
-    max-width: 650px;
-    margin: 0 auto;
-    padding: 25px;
-    background: #f4f6fa;
-    border-radius: 10px;
-    line-height: 2.2;
-    overflow-wrap: anywhere;
-}
-
-.contact-card a {
-    color: #124ba0;
-}
-
-footer {
-    background: #07152e;
-    color: white;
-    text-align: center;
-    padding: 24px;
-    line-height: 1.8;
-}
-
-@media (max-width: 950px) {
-    .sports-grid,
-    .product-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-@media (max-width: 560px) {
-    .header {
-        padding: 16px 5%;
-    }
-
-    nav {
-        gap: 12px;
-    }
-
-    .hero {
-        min-height: 360px;
-        padding: 45px 6%;
-    }
-
-    .section {
-        padding: 40px 5%;
-    }
-
-    .sports-grid,
-    .product-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .sport-card img {
-        height: 220px;
-    }
-
-    .product-card img {
-        height: 240px;
-    }
-}
-```
+renderProducts();
+renderCart();
