@@ -1,264 +1,302 @@
-
+```javascript
 const products = [
-  // FOOTBALL
-  {
-    id: 1, sport: "football", name: "Football Match Ball",
-    price: 1299, emoji: "⚽", category: "Match essentials",
-    image: "https://loremflickr.com/700/500/soccer,ball?lock=101"
-  },
-  {
-    id: 2, sport: "football", name: "Football Boots",
-    price: 3499, emoji: "👟", category: "Footwear",
-    image: "https://loremflickr.com/700/500/soccer,cleats?lock=102"
-  },
-  {
-    id: 3, sport: "football", name: "Team Jersey",
-    price: 1499, emoji: "👕", category: "Apparel",
-    image: "https://loremflickr.com/700/500/soccer,jersey?lock=103"
-  },
-  {
-    id: 4, sport: "football", name: "Shin Guards",
-    price: 799, emoji: "🦵", category: "Protection",
-    image: "https://loremflickr.com/700/500/soccer,shin,guards?lock=104"
-  },
+    // FOOTBALL
+    {
+        id: 1,
+        name: "Football Match Ball",
+        category: "football",
+        price: 899,
+        image: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=700&q=85",
+        description: "Football for practice and matches."
+    },
+    {
+        id: 2,
+        name: "Football Boots",
+        category: "football",
+        price: 1799,
+        image: "https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=700&q=85",
+        description: "Footwear for football training."
+    },
+    {
+        id: 3,
+        name: "Football Jersey",
+        category: "football",
+        price: 799,
+        image: "https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=700&q=85",
+        description: "Sportswear for your next match."
+    },
+    {
+        id: 4,
+        name: "Football Training Gear",
+        category: "football",
+        price: 599,
+        image: "https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=700&q=85",
+        description: "Gear for football practice."
+    },
 
-  // BASKETBALL
-  {
-    id: 5, sport: "basketball", name: "Basketball",
-    price: 999, emoji: "🏀", category: "Match essentials",
-    image: "https://loremflickr.com/700/500/basketball,ball?lock=201"
-  },
-  {
-    id: 6, sport: "basketball", name: "Court Shoes",
-    price: 3999, emoji: "👟", category: "Footwear",
-    image: "https://loremflickr.com/700/500/basketball,shoes?lock=202"
-  },
-  {
-    id: 7, sport: "basketball", name: "Basketball Jersey",
-    price: 1299, emoji: "👕", category: "Apparel",
-    image: "https://loremflickr.com/700/500/basketball,jersey?lock=203"
-  },
-  {
-    id: 8, sport: "basketball", name: "Sports Socks",
-    price: 399, emoji: "🧦", category: "Accessories",
-    image: "https://loremflickr.com/700/500/sports,socks?lock=204"
-  },
+    // BASKETBALL
+    {
+        id: 5,
+        name: "Basketball",
+        category: "basketball",
+        price: 999,
+        image: "https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=700&q=85",
+        description: "Basketball for indoor and outdoor play."
+    },
+    {
+        id: 6,
+        name: "Basketball Court Gear",
+        category: "basketball",
+        price: 1499,
+        image: "https://images.unsplash.com/photo-1519861531473-9200262188bf?auto=format&fit=crop&w=700&q=85",
+        description: "Equipment for court practice."
+    },
+    {
+        id: 7,
+        name: "Basketball Training",
+        category: "basketball",
+        price: 699,
+        image: "https://images.unsplash.com/photo-1504450758481-7338eba7524a?auto=format&fit=crop&w=700&q=85",
+        description: "Basketball practice essentials."
+    },
+    {
+        id: 8,
+        name: "Basketball Match Gear",
+        category: "basketball",
+        price: 899,
+        image: "https://images.unsplash.com/photo-1515523110800-9415d13b84a8?auto=format&fit=crop&w=700&q=85",
+        description: "Gear for basketball sessions."
+    },
 
-  // CRICKET
-  {
-    id: 9, sport: "cricket", name: "English Willow Bat",
-    price: 2499, emoji: "🏏", category: "Batting",
-    image: "https://loremflickr.com/700/500/cricket,bat?lock=301"
-  },
-  {
-    id: 10, sport: "cricket", name: "Cricket Ball",
-    price: 399, emoji: "🔴", category: "Match essentials",
-    image: "https://loremflickr.com/700/500/cricket,ball?lock=302"
-  },
-  {
-    id: 11, sport: "cricket", name: "Batting Gloves",
-    price: 1299, emoji: "🧤", category: "Protection",
-    image: "https://loremflickr.com/700/500/cricket,batting,gloves?lock=303"
-  },
-  {
-    id: 12, sport: "cricket", name: "Cricket Helmet",
-    price: 2999, emoji: "🪖", category: "Protection",
-    image: "https://loremflickr.com/700/500/cricket,helmet?lock=304"
-  },
+    // CRICKET
+    {
+        id: 9,
+        name: "Cricket Bat",
+        category: "cricket",
+        price: 1899,
+        image: "https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=700&q=85",
+        description: "Batting equipment for cricket."
+    },
+    {
+        id: 10,
+        name: "Cricket Match Ball",
+        category: "cricket",
+        price: 399,
+        image: "https://images.unsplash.com/photo-1593341646782-e0b495cff86d?auto=format&fit=crop&w=700&q=85",
+        description: "Equipment for cricket practice."
+    },
+    {
+        id: 11,
+        name: "Cricket Training Gear",
+        category: "cricket",
+        price: 799,
+        image: "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=700&q=85",
+        description: "Gear for cricket training."
+    },
+    {
+        id: 12,
+        name: "Cricket Match Equipment",
+        category: "cricket",
+        price: 999,
+        image: "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=700&q=85",
+        description: "Equipment for your next match."
+    },
 
-  // BASEBALL
-  {
-    id: 13, sport: "baseball", name: "Baseball Bat",
-    price: 2199, emoji: "🏏", category: "Batting",
-    image: "https://loremflickr.com/700/500/baseball,bat?lock=401"
-  },
-  {
-    id: 14, sport: "baseball", name: "Baseball",
-    price: 499, emoji: "⚾", category: "Match essentials",
-    image: "https://loremflickr.com/700/500/baseball,ball?lock=402"
-  },
-  {
-    id: 15, sport: "baseball", name: "Fielding Glove",
-    price: 1999, emoji: "🧤", category: "Fielding",
-    image: "https://loremflickr.com/700/500/baseball,glove?lock=403"
-  },
-  {
-    id: 16, sport: "baseball", name: "Batting Helmet",
-    price: 1799, emoji: "🪖", category: "Protection",
-    image: "https://loremflickr.com/700/500/baseball,batting,helmet?lock=404"
-  }
+    // BASEBALL
+    {
+        id: 13,
+        name: "Baseball Bat",
+        category: "baseball",
+        price: 1599,
+        image: "https://images.unsplash.com/photo-1471295253337-3ceaaedca402?auto=format&fit=crop&w=700&q=85",
+        description: "Batting equipment for baseball."
+    },
+    {
+        id: 14,
+        name: "Baseball Match Gear",
+        category: "baseball",
+        price: 499,
+        image: "https://images.unsplash.com/photo-1508344928928-7165b0a7c1c2?auto=format&fit=crop&w=700&q=85",
+        description: "Gear for baseball practice."
+    },
+    {
+        id: 15,
+        name: "Baseball Training",
+        category: "baseball",
+        price: 699,
+        image: "https://images.unsplash.com/photo-1508098682722-e99c643e7f0b?auto=format&fit=crop&w=700&q=85",
+        description: "Baseball training essentials."
+    },
+    {
+        id: 16,
+        name: "Baseball Practice Gear",
+        category: "baseball",
+        price: 899,
+        image: "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=700&q=85",
+        description: "Equipment for practice sessions."
+    }
 ];
 
-let cart = [];
+// Load cart from the browser
+let cart = JSON.parse(localStorage.getItem("gameArenaCart")) || [];
 
-try {
-  cart = JSON.parse(localStorage.getItem("gameArenaCart")) || [];
-} catch (error) {
-  cart = [];
-}
+// Display products
+function displayProducts() {
+    const categories = ["football", "basketball", "cricket", "baseball"];
 
-const currency = amount => "₹" + amount.toLocaleString("en-IN");
+    categories.forEach(category => {
+        const container = document.getElementById(category + "-products");
 
-function renderProducts() {
-  ["football", "basketball", "cricket", "baseball"].forEach(sport => {
-    const target = document.getElementById(sport + "Products");
+        const categoryProducts = products.filter(
+            product => product.category === category
+        );
 
-    target.innerHTML = products
-      .filter(product => product.sport === sport)
-      .map(product => `
-        <article class="product-card">
-          <div class="product-visual">
-            <img
-              src="${product.image}"
-              alt="${product.name}"
-              loading="lazy"
-              onerror="this.onerror=null;this.parentElement.innerHTML='<span style=&quot;font-size:4rem&quot;>${product.emoji}</span>'"
-            >
-          </div>
-          <div class="product-info">
-            <span class="product-category">${product.category}</span>
-            <h3>${product.name}</h3>
-            <div class="rating">★★★★★ <small>(4.5)</small></div>
-            <div class="product-bottom">
-              <span class="price">${currency(product.price)}</span>
-              <button class="add-btn" onclick="addToCart(${product.id})">
-                Add to Cart
-              </button>
+        container.innerHTML = categoryProducts.map(product => `
+            <div class="product-card">
+                <img
+                    src="${product.image}"
+                    alt="${product.name}"
+                    loading="lazy"
+                    onerror="this.onerror=null; this.src='https://placehold.co/700x500/f0f2f5/07152e?text=Product+Photo';"
+                >
+
+                <div class="product-info">
+                    <h3>${product.name}</h3>
+                    <p>${product.description}</p>
+                    <p class="price">₹${product.price.toLocaleString("en-IN")}</p>
+                    <button class="btn" onclick="addToCart(${product.id})">
+                        Add to Cart
+                    </button>
+                </div>
             </div>
-          </div>
-        </article>
-      `).join("");
-  });
+        `).join("");
+    });
 }
 
+// Add product to cart
+function addToCart(productId) {
+    const existingItem = cart.find(item => item.id === productId);
+
+    if (existingItem) {
+        existingItem.quantity++;
+    } else {
+        cart.push({
+            id: productId,
+            quantity: 1
+        });
+    }
+
+    saveCart();
+    alert("Product added to your cart!");
+}
+
+// Save cart
 function saveCart() {
-  try {
     localStorage.setItem("gameArenaCart", JSON.stringify(cart));
-  } catch (error) {
-    console.warn("Cart could not be saved in this browser.");
-  }
-  renderCart();
+    displayCart();
 }
 
-function addToCart(id) {
-  const existing = cart.find(item => item.id === id);
+// Display cart items
+function displayCart() {
+    const cartContainer = document.getElementById("cart-items");
+    const countElement = document.getElementById("cart-count");
 
-  if (existing) {
-    existing.quantity++;
-  } else {
-    cart.push({ id: id, quantity: 1 });
-  }
+    let itemCount = 0;
+    let subtotal = 0;
 
-  saveCart();
+    if (cart.length === 0) {
+        cartContainer.innerHTML = "<p>Your cart is empty. Add some products!</p>";
+    } else {
+        cartContainer.innerHTML = cart.map(item => {
+            const product = products.find(p => p.id === item.id);
+
+            if (!product) return "";
+
+            itemCount += item.quantity;
+            subtotal += product.price * item.quantity;
+
+            return `
+                <div class="cart-row">
+                    <div>
+                        <h3>${product.name}</h3>
+                        <p>₹${product.price.toLocaleString("en-IN")} each</p>
+                        <p>Amount: ₹${(product.price * item.quantity).toLocaleString("en-IN")}</p>
+                    </div>
+
+                    <div class="quantity-controls">
+                        <button onclick="changeQuantity(${item.id}, -1)">−</button>
+                        <span>${item.quantity}</span>
+                        <button onclick="changeQuantity(${item.id}, 1)">+</button>
+                    </div>
+
+                    <button class="remove-btn" onclick="removeItem(${item.id})">
+                        Remove
+                    </button>
+                </div>
+            `;
+        }).join("");
+    }
+
+    const delivery = subtotal > 0 ? 99 : 0;
+    const total = subtotal + delivery;
+
+    countElement.textContent = itemCount;
+    document.getElementById("subtotal").textContent =
+        "₹" + subtotal.toLocaleString("en-IN");
+    document.getElementById("delivery").textContent =
+        "₹" + delivery.toLocaleString("en-IN");
+    document.getElementById("total").textContent =
+        "₹" + total.toLocaleString("en-IN");
 }
 
-function changeQuantity(id, amount) {
-  const item = cart.find(entry => entry.id === id);
-  if (!item) return;
+// Change product quantity
+function changeQuantity(productId, amount) {
+    const item = cart.find(item => item.id === productId);
 
-  item.quantity += amount;
+    if (!item) return;
 
-  if (item.quantity <= 0) {
-    cart = cart.filter(entry => entry.id !== id);
-  }
+    item.quantity += amount;
 
-  saveCart();
+    if (item.quantity <= 0) {
+        cart = cart.filter(item => item.id !== productId);
+    }
+
+    saveCart();
 }
 
-function removeFromCart(id) {
-  cart = cart.filter(item => item.id !== id);
-  saveCart();
+// Remove an item
+function removeItem(productId) {
+    cart = cart.filter(item => item.id !== productId);
+    saveCart();
 }
 
-function renderCart() {
-  const cartItems = document.getElementById("cartItems");
-  const itemCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+// Clear all cart items
+function clearCart() {
+    if (cart.length === 0) {
+        alert("Your cart is already empty.");
+        return;
+    }
 
-  document.getElementById("cartCount").textContent = itemCount;
-
-  if (cart.length === 0) {
-    cartItems.innerHTML =
-      '<p class="empty-cart">Your cart is empty. Add something you love!</p>';
-  } else {
-    cartItems.innerHTML = cart.map(item => {
-      const product = products.find(p => p.id === item.id);
-      if (!product) return "";
-
-      return `
-        <article class="cart-row">
-          <div class="cart-emoji">
-            <img
-              src="${product.image}"
-              alt="${product.name}"
-              loading="lazy"
-              onerror="this.onerror=null;this.parentElement.textContent='${product.emoji}'"
-            >
-          </div>
-
-          <div>
-            <h3>${product.name}</h3>
-            <p>${product.sport} · ${currency(product.price)} each</p>
-            <div class="quantity-controls">
-              <button onclick="changeQuantity(${product.id}, -1)">−</button>
-              <span>${item.quantity}</span>
-              <button onclick="changeQuantity(${product.id}, 1)">+</button>
-              <button class="remove-btn" onclick="removeFromCart(${product.id})">
-                Remove
-              </button>
-            </div>
-          </div>
-
-          <div class="cart-row-total">
-            ${currency(product.price * item.quantity)}
-          </div>
-        </article>
-      `;
-    }).join("");
-  }
-
-  const subtotal = cart.reduce((sum, item) => {
-    const product = products.find(p => p.id === item.id);
-    return sum + (product ? product.price * item.quantity : 0);
-  }, 0);
-
-  const delivery = subtotal > 0 ? 99 : 0;
-
-  document.getElementById("subtotal").textContent = currency(subtotal);
-  document.getElementById("delivery").textContent = currency(delivery);
-  document.getElementById("total").textContent =
-    currency(subtotal + delivery);
+    if (confirm("Are you sure you want to clear your cart?")) {
+        cart = [];
+        saveCart();
+    }
 }
 
-document.getElementById("checkoutBtn").addEventListener("click", () => {
-  if (cart.length === 0) {
-    alert("Your cart is empty. Please add a product first.");
-  } else {
-    alert("Thank you for shopping at Game Arena! This is a demo checkout; payments are not enabled.");
-  }
-});
+// Demo checkout
+function checkout() {
+    if (cart.length === 0) {
+        alert("Your cart is empty. Add products before checkout.");
+        return;
+    }
 
-document.getElementById("contactForm").addEventListener("submit", event => {
-  event.preventDefault();
+    alert(
+        "This is a demo checkout. No payment or order has been processed.\n\n" +
+        "To accept real orders, connect a payment gateway and order-processing system."
+    );
+}
 
-  const name = document.getElementById("contactName").value.trim();
-
-  document.getElementById("contactFeedback").textContent =
-    `Thank you, ${name}! This demo form does not send emails yet.`;
-
-  event.target.reset();
-});
-
-document.getElementById("menuToggle").addEventListener("click", () => {
-  document.getElementById("mainNav").classList.toggle("open");
-});
-
-document.querySelectorAll("#mainNav a").forEach(link => {
-  link.addEventListener("click", () => {
-    document.getElementById("mainNav").classList.remove("open");
-  });
-});
-
-document.getElementById("year").textContent = new Date().getFullYear();
-
-renderProducts();
-renderCart();
+// Start the website
+displayProducts();
+displayCart();
+```
