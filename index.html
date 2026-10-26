@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Arena | Sports Accessories</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home"><span class="brand-icon">🏆</span> Game Arena</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
+    <nav id="mainNav">
+      <a href="#home">Home</a>
+      <a href="#football">Football</a>
+      <a href="#basketball">Basketball</a>
+      <a href="#cricket">Cricket</a>
+      <a href="#baseball">Baseball</a>
+      <a href="#cart">Cart <span class="cart-count" id="cartCount">0</span></a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow">PLAY • EQUIP • PERFORM</p>
+        <h1>Your Game.<br><span>Your Arena.</span></h1>
+        <p>Find your next favourite sports accessory, from match-day essentials to training gear.</p>
+        <a class="button button-yellow" href="#sports">Explore Sports <span>→</span></a>
+      </div>
+      <div class="hero-ball" aria-hidden="true">⚽</div>
+    </section>
+
+    <section class="section" id="sports">
+      <div class="section-heading">
+        <p class="eyebrow">FIND YOUR SPORT</p>
+        <h2>Choose Your Arena</h2>
+        <p>Shop essentials for every game.</p>
+      </div>
+      <div class="sports-grid">
+        <a class="sport-tile football-tile" href="#football"><span>⚽</span><h3>Football</h3><p>Shop football gear →</p></a>
+        <a class="sport-tile basketball-tile" href="#basketball"><span>🏀</span><h3>Basketball</h3><p>Shop basketball gear →</p></a>
+        <a class="sport-tile cricket-tile" href="#cricket"><span>🏏</span><h3>Cricket</h3><p>Shop cricket gear →</p></a>
+        <a class="sport-tile baseball-tile" href="#baseball"><span>⚾</span><h3>Baseball</h3><p>Shop baseball gear →</p></a>
+      </div>
+    </section>
+
+    <section class="section catalog-section" id="football">
+      <div class="section-heading left-heading"><p class="eyebrow">THE BEAUTIFUL GAME</p><h2>Football</h2><p>Gear up and own the pitch.</p></div>
+      <div class="product-grid" id="footballProducts"></div>
+    </section>
+
+    <section class="section catalog-section alternate" id="basketball">
+      <div class="section-heading left-heading"><p class="eyebrow">RISE ABOVE</p><h2>Basketball</h2><p>Take your game to the next level.</p></div>
+      <div class="product-grid" id="basketballProducts"></div>
+    </section>
+
+    <section class="section catalog-section" id="cricket">
+      <div class="section-heading left-heading"><p class="eyebrow">EVERY SHOT COUNTS</p><h2>Cricket</h2><p>Get ready for your innings.</p></div>
+      <div class="product-grid" id="cricketProducts"></div>
+    </section>
+
+    <section class="section catalog-section alternate" id="baseball">
+      <div class="section-heading left-heading"><p class="eyebrow">HIT. RUN. REPEAT.</p><h2>Baseball</h2><p>Built for every inning.</p></div>
+      <div class="product-grid" id="baseballProducts"></div>
+    </section>
+
+    <section class="section cart-section" id="cart">
+      <div class="section-heading left-heading"><p class="eyebrow">YOUR PICKS</p><h2>Shopping Cart</h2><p>Review your gear before checkout.</p></div>
+      <div class="cart-layout">
+        <div class="cart-items" id="cartItems"><p class="empty-cart">Your cart is empty. Add something you love!</p></div>
+        <aside class="cart-summary">
+          <h3>Order Summary</h3>
+          <div class="summary-line"><span>Subtotal</span><strong id="subtotal">₹0</strong></div>
+          <div class="summary-line"><span>Delivery</span><strong id="delivery">₹0</strong></div>
+          <div class="summary-line total-line"><span>Total</span><strong id="total">₹0</strong></div>
+          <button class="button button-primary full-width" id="checkoutBtn">Proceed to Checkout</button>
+          <p class="small-note">Demo checkout only. No payment will be processed.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="contact-inner">
+        <div class="contact-copy">
+          <p class="eyebrow">LET'S CONNECT</p>
+          <h2>Contact the Owner</h2>
+          <p>Questions about the store? Get in touch.</p>
+          <div class="contact-detail"><span>👤</span><div><small>Owner</small><strong>Vaibhav Singh Bhadauria</strong></div></div>
+          <div class="contact-detail"><span>✉️</span><div><small>Email</small><a href="mailto:vaibhavbhadauria201@gmail.com">vaibhavbhadauria201@gmail.com</a></div></div>
+          <div class="contact-detail"><span>☎️</span><div><small>Phone</small><strong>9045212805</strong></div></div>
+        </div>
+        <form id="contactForm" class="contact-form">
+          <h3>Send a Message</h3>
+          <label for="contactName">Your name</label>
+          <input id="contactName" name="name" type="text" placeholder="Enter your name" required>
+          <label for="contactEmail">Email address</label>
+          <input id="contactEmail" name="email" type="email" placeholder="you@example.com" required>
+          <label for="contactMessage">Message</label>
+          <textarea id="contactMessage" name="message" rows="4" placeholder="How can we help?" required></textarea>
+          <button class="button button-primary full-width" type="submit">Send Message</button>
+          <p class="form-note" id="contactFeedback" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand" href="#home"><span class="brand-icon">🏆</span> Game Arena</a>
+    <p>© <span id="year"></span> Game Arena. Play with passion.</p>
+    <a href="#home">Back to top ↑</a>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
