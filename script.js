@@ -1,12 +1,15 @@
 ```javascript
+// Game Arena product list
+// Each product has its own photo URL.
+
 const products = [
-    // FOOTBALL
+    // FOOTBALL ACCESSORIES
     {
         id: 1,
         name: "Football Match Ball",
         category: "football",
         price: 899,
-        image: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=700&q=85",
+        image: "https://images.unsplash.com/photo-1614632537423-1e6c2e7e0b1b?auto=format&fit=crop&w=700&q=85",
         description: "Football for practice and matches."
     },
     {
@@ -14,8 +17,8 @@ const products = [
         name: "Football Boots",
         category: "football",
         price: 1799,
-        image: "https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=700&q=85",
-        description: "Footwear for football training."
+        image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=85",
+        description: "Sports footwear for training."
     },
     {
         id: 3,
@@ -23,52 +26,52 @@ const products = [
         category: "football",
         price: 799,
         image: "https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=700&q=85",
-        description: "Sportswear for your next match."
+        description: "Comfortable sportswear for matches."
     },
     {
         id: 4,
-        name: "Football Training Gear",
+        name: "Football Training Equipment",
         category: "football",
         price: 599,
         image: "https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=700&q=85",
-        description: "Gear for football practice."
+        description: "Equipment for football practice."
     },
 
-    // BASKETBALL
+    // BASKETBALL ACCESSORIES
     {
         id: 5,
         name: "Basketball",
         category: "basketball",
         price: 999,
         image: "https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=700&q=85",
-        description: "Basketball for indoor and outdoor play."
+        description: "Basketball for indoor and outdoor games."
     },
     {
         id: 6,
-        name: "Basketball Court Gear",
+        name: "Basketball Shoes",
         category: "basketball",
-        price: 1499,
-        image: "https://images.unsplash.com/photo-1519861531473-9200262188bf?auto=format&fit=crop&w=700&q=85",
-        description: "Equipment for court practice."
+        price: 1999,
+        image: "https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=700&q=85",
+        description: "Sports shoes for court training."
     },
     {
         id: 7,
-        name: "Basketball Training",
+        name: "Basketball Sportswear",
         category: "basketball",
-        price: 699,
-        image: "https://images.unsplash.com/photo-1504450758481-7338eba7524a?auto=format&fit=crop&w=700&q=85",
-        description: "Basketball practice essentials."
+        price: 799,
+        image: "https://images.unsplash.com/photo-1519861531473-9200262188bf?auto=format&fit=crop&w=700&q=85",
+        description: "Gear for basketball sessions."
     },
     {
         id: 8,
-        name: "Basketball Match Gear",
+        name: "Basketball Training Gear",
         category: "basketball",
-        price: 899,
-        image: "https://images.unsplash.com/photo-1515523110800-9415d13b84a8?auto=format&fit=crop&w=700&q=85",
-        description: "Gear for basketball sessions."
+        price: 699,
+        image: "https://images.unsplash.com/photo-1504450758481-7338eba7524a?auto=format&fit=crop&w=700&q=85",
+        description: "Equipment for basketball practice."
     },
 
-    // CRICKET
+    // CRICKET ACCESSORIES
     {
         id: 9,
         name: "Cricket Bat",
@@ -79,30 +82,30 @@ const products = [
     },
     {
         id: 10,
-        name: "Cricket Match Ball",
+        name: "Cricket Ball",
         category: "cricket",
         price: 399,
         image: "https://images.unsplash.com/photo-1593341646782-e0b495cff86d?auto=format&fit=crop&w=700&q=85",
-        description: "Equipment for cricket practice."
+        description: "Ball for cricket practice."
     },
     {
         id: 11,
-        name: "Cricket Training Gear",
+        name: "Cricket Gloves",
         category: "cricket",
-        price: 799,
+        price: 699,
         image: "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=700&q=85",
-        description: "Gear for cricket training."
+        description: "Protective equipment for cricket."
     },
     {
         id: 12,
-        name: "Cricket Match Equipment",
+        name: "Cricket Protective Gear",
         category: "cricket",
         price: 999,
         image: "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=700&q=85",
-        description: "Equipment for your next match."
+        description: "Protective gear for match day."
     },
 
-    // BASEBALL
+    // BASEBALL ACCESSORIES
     {
         id: 13,
         name: "Baseball Bat",
@@ -113,39 +116,64 @@ const products = [
     },
     {
         id: 14,
-        name: "Baseball Match Gear",
+        name: "Baseball",
         category: "baseball",
-        price: 499,
+        price: 299,
         image: "https://images.unsplash.com/photo-1508344928928-7165b0a7c1c2?auto=format&fit=crop&w=700&q=85",
-        description: "Gear for baseball practice."
+        description: "Ball for baseball practice."
     },
     {
         id: 15,
-        name: "Baseball Training",
-        category: "baseball",
-        price: 699,
-        image: "https://images.unsplash.com/photo-1508098682722-e99c643e7f0b?auto=format&fit=crop&w=700&q=85",
-        description: "Baseball training essentials."
-    },
-    {
-        id: 16,
-        name: "Baseball Practice Gear",
+        name: "Baseball Glove",
         category: "baseball",
         price: 899,
         image: "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=700&q=85",
-        description: "Equipment for practice sessions."
+        description: "Glove for catching and fielding."
+    },
+    {
+        id: 16,
+        name: "Baseball Training Gear",
+        category: "baseball",
+        price: 699,
+        image: "https://images.unsplash.com/photo-1508098682722-e99c643e7f0b?auto=format&fit=crop&w=700&q=85",
+        description: "Equipment for baseball practice."
     }
 ];
 
-// Load cart from the browser
-let cart = JSON.parse(localStorage.getItem("gameArenaCart")) || [];
+// Restore the cart saved in this browser
+let cart = [];
 
-// Display products
+try {
+    const savedCart = JSON.parse(
+        localStorage.getItem("gameArenaCart") || "[]"
+    );
+
+    if (Array.isArray(savedCart)) {
+        cart = savedCart.filter(item =>
+            products.some(product => product.id === item.id) &&
+            Number.isInteger(item.quantity) &&
+            item.quantity > 0
+        );
+    }
+} catch (error) {
+    cart = [];
+}
+
+// Display product cards
 function displayProducts() {
-    const categories = ["football", "basketball", "cricket", "baseball"];
+    const categories = [
+        "football",
+        "basketball",
+        "cricket",
+        "baseball"
+    ];
 
     categories.forEach(category => {
-        const container = document.getElementById(category + "-products");
+        const container = document.getElementById(
+            category + "-products"
+        );
+
+        if (!container) return;
 
         const categoryProducts = products.filter(
             product => product.category === category
@@ -157,14 +185,18 @@ function displayProducts() {
                     src="${product.image}"
                     alt="${product.name}"
                     loading="lazy"
-                    onerror="this.onerror=null; this.src='https://placehold.co/700x500/f0f2f5/07152e?text=Product+Photo';"
+                    onerror="this.onerror=null; this.src='https://placehold.co/700x500/e8ecf2/07152e?text=Sports+Product';"
                 >
 
                 <div class="product-info">
                     <h3>${product.name}</h3>
                     <p>${product.description}</p>
                     <p class="price">₹${product.price.toLocaleString("en-IN")}</p>
-                    <button class="btn" onclick="addToCart(${product.id})">
+
+                    <button
+                        class="btn"
+                        onclick="addToCart(${product.id})"
+                    >
                         Add to Cart
                     </button>
                 </div>
@@ -175,7 +207,15 @@ function displayProducts() {
 
 // Add product to cart
 function addToCart(productId) {
-    const existingItem = cart.find(item => item.id === productId);
+    const product = products.find(
+        item => item.id === productId
+    );
+
+    if (!product) return;
+
+    const existingItem = cart.find(
+        item => item.id === productId
+    );
 
     if (existingItem) {
         existingItem.quantity++;
@@ -187,28 +227,37 @@ function addToCart(productId) {
     }
 
     saveCart();
-    alert("Product added to your cart!");
+    alert(product.name + " added to your cart!");
 }
 
-// Save cart
+// Save cart and refresh the display
 function saveCart() {
-    localStorage.setItem("gameArenaCart", JSON.stringify(cart));
+    localStorage.setItem(
+        "gameArenaCart",
+        JSON.stringify(cart)
+    );
+
     displayCart();
 }
 
-// Display cart items
+// Display cart
 function displayCart() {
     const cartContainer = document.getElementById("cart-items");
     const countElement = document.getElementById("cart-count");
+
+    if (!cartContainer || !countElement) return;
 
     let itemCount = 0;
     let subtotal = 0;
 
     if (cart.length === 0) {
-        cartContainer.innerHTML = "<p>Your cart is empty. Add some products!</p>";
+        cartContainer.innerHTML =
+            '<p class="empty-cart">Your cart is empty. Add some sports accessories!</p>';
     } else {
         cartContainer.innerHTML = cart.map(item => {
-            const product = products.find(p => p.id === item.id);
+            const product = products.find(
+                product => product.id === item.id
+            );
 
             if (!product) return "";
 
@@ -219,8 +268,12 @@ function displayCart() {
                 <div class="cart-row">
                     <div>
                         <h3>${product.name}</h3>
-                        <p>₹${product.price.toLocaleString("en-IN")} each</p>
-                        <p>Amount: ₹${(product.price * item.quantity).toLocaleString("en-IN")}</p>
+                        <p>Price: ₹${product.price.toLocaleString("en-IN")}</p>
+                        <p>
+                            Amount: ₹${(
+                                product.price * item.quantity
+                            ).toLocaleString("en-IN")}
+                        </p>
                     </div>
 
                     <div class="quantity-controls">
@@ -229,7 +282,10 @@ function displayCart() {
                         <button onclick="changeQuantity(${item.id}, 1)">+</button>
                     </div>
 
-                    <button class="remove-btn" onclick="removeItem(${item.id})">
+                    <button
+                        class="remove-btn"
+                        onclick="removeItem(${item.id})"
+                    >
                         Remove
                     </button>
                 </div>
@@ -241,58 +297,69 @@ function displayCart() {
     const total = subtotal + delivery;
 
     countElement.textContent = itemCount;
+
     document.getElementById("subtotal").textContent =
         "₹" + subtotal.toLocaleString("en-IN");
+
     document.getElementById("delivery").textContent =
         "₹" + delivery.toLocaleString("en-IN");
+
     document.getElementById("total").textContent =
         "₹" + total.toLocaleString("en-IN");
 }
 
-// Change product quantity
+// Increase or decrease quantity
 function changeQuantity(productId, amount) {
-    const item = cart.find(item => item.id === productId);
+    const item = cart.find(
+        item => item.id === productId
+    );
 
     if (!item) return;
 
     item.quantity += amount;
 
     if (item.quantity <= 0) {
-        cart = cart.filter(item => item.id !== productId);
+        cart = cart.filter(
+            item => item.id !== productId
+        );
     }
 
     saveCart();
 }
 
-// Remove an item
+// Remove one product
 function removeItem(productId) {
-    cart = cart.filter(item => item.id !== productId);
+    cart = cart.filter(
+        item => item.id !== productId
+    );
+
     saveCart();
 }
 
-// Clear all cart items
+// Clear the entire cart
 function clearCart() {
     if (cart.length === 0) {
         alert("Your cart is already empty.");
         return;
     }
 
-    if (confirm("Are you sure you want to clear your cart?")) {
+    if (confirm("Do you want to clear your entire cart?")) {
         cart = [];
         saveCart();
     }
 }
 
-// Demo checkout
+// Demo checkout only
 function checkout() {
     if (cart.length === 0) {
-        alert("Your cart is empty. Add products before checkout.");
+        alert("Your cart is empty. Add products first.");
         return;
     }
 
     alert(
-        "This is a demo checkout. No payment or order has been processed.\n\n" +
-        "To accept real orders, connect a payment gateway and order-processing system."
+        "Welcome to Game Arena!\n\n" +
+        "This is a demo checkout page. " +
+        "No order or payment has been processed."
     );
 }
 
